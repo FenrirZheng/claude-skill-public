@@ -1,0 +1,12 @@
+{
+  "skill_name": "tags-symbol-lookup",
+  "evals": [
+    {
+      "id": 0,
+      "name": "find-symbol-happy-path",
+      "prompt": "In the repo at /home/fenrir/code/casa, where is the symbol `AdvertisementService` defined? Give me the file path and line number.",
+      "expected_output": "we-business-starters/we-business-ads/we-business-starter-ads/src/main/java/we/business/ads/service/AdvertisementService.java:10 (Java interface).",
+      "files": []
+    }
+  ]
+}
