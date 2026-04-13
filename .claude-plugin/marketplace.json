@@ -1,0 +1,20 @@
+{
+  "name": "claude-skill-public",
+  "owner": {
+    "name": "FenrirZheng",
+    "email": "fenrir.zheng@al88tw.com"
+  },
+  "metadata": {
+    "description": "Public Claude Code skills by FenrirZheng",
+    "pluginRoot": "./plugins"
+  },
+  "plugins": [
+    {
+      "name": "tags-symbol-lookup",
+      "source": "tags-symbol-lookup",
+      "description": "Symbol lookup via GNU Global (gtags); fallback to ctags or rg",
+      "category": "productivity",
+      "tags": ["symbols", "navigation", "gtags", "ctags"]
+    }
+  ]
+}
