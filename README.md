@@ -50,3 +50,7 @@ tags-symbol-lookup/
 └── evals/
     └── evals.json    # skill evaluation cases
 ```
+
+## 和IDEA ACP (Agent) 調用 idea MCP 比較結果
+
+![alt text](imgs/gtags-vs-idea-mcp.png)
