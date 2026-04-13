@@ -1,0 +1,12 @@
+{
+  "name": "tags-symbol-lookup",
+  "version": "0.1.0",
+  "description": "Symbol lookup via GNU Global (gtags); fallback to ctags or rg",
+  "author": {
+    "name": "FenrirZheng",
+    "email": "fenrir.zheng@al88tw.com"
+  },
+  "repository": "https://github.com/FenrirZheng/claude-skill-public",
+  "license": "MIT",
+  "keywords": ["gtags", "ctags", "symbols", "navigation"]
+}

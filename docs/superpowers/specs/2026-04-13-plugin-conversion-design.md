@@ -140,7 +140,7 @@ After conversion, verify:
 2. `jq . plugins/tags-symbol-lookup/.claude-plugin/plugin.json` parses cleanly.
 3. `SKILL.md` frontmatter (`name`, `description`) is unchanged.
 4. `gtags.sh` remains executable (`chmod +x`).
-5. `grep -n CLAUDE_PLUGIN_ROOT plugins/tags-symbol-lookup/skills/tags-symbol-lookup/SKILL.md` returns 3 matches.
+5. `grep -n CLAUDE_PLUGIN_ROOT plugins/tags-symbol-lookup/skills/tags-symbol-lookup/SKILL.md` returns 2 matches (the two `gtags.sh` references; the third original absolute path was the `tags.sh` block, intentionally dropped — see the "Decision" note under "SKILL.md path fixes").
 6. No remaining `/home/fenrir/.claude/skills/` references in the plugin tree.
 
 Manual smoke test (optional):

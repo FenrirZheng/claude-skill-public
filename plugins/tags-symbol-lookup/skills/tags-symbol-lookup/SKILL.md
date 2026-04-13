@@ -135,14 +135,14 @@ For >10 hits: group by directory, or narrow with `global -gx 'class \w+Service'`
 [ -x ./gtags.sh ] && ./gtags.sh
 ```
 
-**2. Bundled `gtags.sh`** at `/home/fenrir/.claude/skills/tags-symbol-lookup/gtags.sh`:
+**2. Bundled `gtags.sh`** at `${CLAUDE_PLUGIN_ROOT}/skills/tags-symbol-lookup/gtags.sh`:
 - `GTAGSLABEL=native-pygments` — native parser for C/C++/Java/PHP, pygments fallback for JS/TS/Vue/Go/Rust/Kotlin/Swift/etc.
 - Writes db to `./tags/` subdir (query needs `GTAGSDBPATH`/`GTAGSROOT` as above)
 - Refuses to run outside a git repo root (safety guard against stray `rm -rf`)
 - Indexes Java/JS/TS/Go/Python/Rust/Ruby/PHP/C/C++/Kotlin/Swift/SQL/Gradle/Proto/Terraform/TOML/YAML/XML
 
 ```bash
-/home/fenrir/.claude/skills/tags-symbol-lookup/gtags.sh
+${CLAUDE_PLUGIN_ROOT}/skills/tags-symbol-lookup/gtags.sh
 ```
 
 Don't auto-run without asking — `tags/` and `gtags.files` become repo-root artifacts; some teams gitignore them, some don't.
@@ -153,11 +153,7 @@ GTAGSLABEL=native-pygments gtags
 ```
 Requires `apt install global universal-ctags python3-pygments`.
 
-**4. ctags fallback** (bundled `tags.sh`) — only when gtags unavailable or specifically requested:
-```bash
-/home/fenrir/.claude/skills/tags-symbol-lookup/tags.sh   # writes ./tags
-rg "^Symbol\t" tags                                       # query
-```
+**4. ctags fallback** — only when gtags unavailable. Install `universal-ctags` and run `ctags -R` in the repo; query with `rg "^Symbol\t" tags`.
 
 ## When NOT to use the index
 
