@@ -16,17 +16,17 @@ Symbol lookup via GNU Global (`gtags`), with fallback to ctags or `rg`. Answers 
 
 ```bash
 # Add this repo as a marketplace (from GitHub)
-/plugin marketplace add FenrirZheng/claude-skill-public
+/plugin marketplace add FenrirZheng/fenrir-claude-public-skills
 
 # Install the plugin
-/plugin install tags-symbol-lookup@claude-skill-public
+/plugin install tags-symbol-lookup@fenrir-claude-public-skills
 ```
 
 For local development from a clone:
 
 ```bash
 /plugin marketplace add /absolute/path/to/claude-code-public-skill
-/plugin install tags-symbol-lookup@claude-skill-public
+/plugin install tags-symbol-lookup@fenrir-claude-public-skills
 ```
 
 ### System dependencies (for `tags-symbol-lookup`)

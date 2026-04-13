@@ -97,7 +97,7 @@ git commit -m "refactor: move tags-symbol-lookup skill into plugin layout"
     "name": "FenrirZheng",
     "email": "fenrir.zheng@al88tw.com"
   },
-  "repository": "https://github.com/FenrirZheng/claude-skill-public",
+  "repository": "https://github.com/FenrirZheng/fenrir-claude-public-skills",
   "license": "MIT",
   "keywords": ["gtags", "ctags", "symbols", "navigation"]
 }
@@ -131,7 +131,7 @@ Expected: prints `true`, exit 0.
 
 ```json
 {
-  "name": "claude-skill-public",
+  "name": "fenrir-claude-public-skills",
   "owner": {
     "name": "FenrirZheng",
     "email": "fenrir.zheng@al88tw.com"
@@ -162,7 +162,7 @@ Expected: pretty-printed JSON, exit 0.
 - [ ] **Step 3: Validate required fields**
 
 ```bash
-jq -e '.name == "claude-skill-public"
+jq -e '.name == "fenrir-claude-public-skills"
        and (.owner.name | length > 0)
        and (.plugins | length == 1)
        and .plugins[0].name == "tags-symbol-lookup"
@@ -285,17 +285,17 @@ Symbol lookup via GNU Global (`gtags`), with fallback to ctags or `rg`. Answers 
 
 ```bash
 # Add this repo as a marketplace (from GitHub)
-/plugin marketplace add FenrirZheng/claude-skill-public
+/plugin marketplace add FenrirZheng/fenrir-claude-public-skills
 
 # Install the plugin
-/plugin install tags-symbol-lookup@claude-skill-public
+/plugin install tags-symbol-lookup@fenrir-claude-public-skills
 ```
 
 For local development from a clone:
 
 ```bash
 /plugin marketplace add /absolute/path/to/claude-code-public-skill
-/plugin install tags-symbol-lookup@claude-skill-public
+/plugin install tags-symbol-lookup@fenrir-claude-public-skills
 ```
 
 ### System dependencies (for `tags-symbol-lookup`)
@@ -421,7 +421,7 @@ Not required to mark the plan complete — run only if a Claude Code instance is
 
 ```bash
 /plugin marketplace add /home/fenrir/Downloads/claude-code-public-skill
-/plugin install tags-symbol-lookup@claude-skill-public
+/plugin install tags-symbol-lookup@fenrir-claude-public-skills
 ```
 
 Then ask: "where is `UserRepository` defined?" in a project with a GTAGS index. Skill should activate, `global -x` should run, a `file:line` answer should appear.

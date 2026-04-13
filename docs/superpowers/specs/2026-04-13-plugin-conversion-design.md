@@ -44,7 +44,7 @@ Path: `.claude-plugin/marketplace.json`
 
 ```json
 {
-  "name": "claude-skill-public",
+  "name": "fenrir-claude-public-skills",
   "owner": {
     "name": "FenrirZheng",
     "email": "fenrir.zheng@al88tw.com"
@@ -66,7 +66,7 @@ Path: `.claude-plugin/marketplace.json`
 ```
 
 Notes:
-- `name` `claude-skill-public` matches the GitHub repo and is not on the reserved-names list.
+- `name` `fenrir-claude-public-skills` matches the GitHub repo and is not on the reserved-names list.
 - `metadata.pluginRoot: "./plugins"` lets plugin `source` be just `tags-symbol-lookup`.
 
 ## `plugin.json`
@@ -82,7 +82,7 @@ Path: `plugins/tags-symbol-lookup/.claude-plugin/plugin.json`
     "name": "FenrirZheng",
     "email": "fenrir.zheng@al88tw.com"
   },
-  "repository": "https://github.com/FenrirZheng/claude-skill-public",
+  "repository": "https://github.com/FenrirZheng/fenrir-claude-public-skills",
   "license": "MIT",
   "keywords": ["gtags", "ctags", "symbols", "navigation"]
 }
@@ -112,8 +112,8 @@ Replace the "Installation" and "Layout" sections with:
 ## Installation
 
 ```bash
-/plugin marketplace add FenrirZheng/claude-skill-public
-/plugin install tags-symbol-lookup@claude-skill-public
+/plugin marketplace add FenrirZheng/fenrir-claude-public-skills
+/plugin install tags-symbol-lookup@fenrir-claude-public-skills
 ```
 
 ## Layout
@@ -146,7 +146,7 @@ After conversion, verify:
 Manual smoke test (optional):
 ```
 /plugin marketplace add .
-/plugin install tags-symbol-lookup@claude-skill-public
+/plugin install tags-symbol-lookup@fenrir-claude-public-skills
 ```
 from a fresh clone — then trigger the skill with a "where is X defined?" query.
 
