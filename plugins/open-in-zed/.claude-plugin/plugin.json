@@ -1,0 +1,12 @@
+{
+  "name": "open-in-zed",
+  "version": "0.1.0",
+  "description": "Slash command to open all files touched in the current session in Zed",
+  "author": {
+    "name": "FenrirZheng",
+    "email": "fenrir.zheng@al88tw.com"
+  },
+  "repository": "https://github.com/FenrirZheng/fenrir-claude-public-skills",
+  "license": "MIT",
+  "keywords": ["zed", "editor", "session", "workflow"]
+}

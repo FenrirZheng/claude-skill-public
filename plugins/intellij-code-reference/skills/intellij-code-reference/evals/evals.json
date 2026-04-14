@@ -1,0 +1,37 @@
+{
+  "skill_name": "intellij-code-reference",
+  "evals": [
+    {
+      "id": 1,
+      "name": "definition-lookup-tags-wins",
+      "prompt": "I'm working in /home/fenrir/code/casa (a multi-module Spring Boot monorepo open in IntelliJ). Where is the class OrderRuleService defined? Give me file:line and a one-line summary.",
+      "expected_output": "Should answer with file:line for OrderRuleService at we-business-order-starter/we-business-order-audit/.../OrderRuleService.java:22. The skill should make Claude try gtags FIRST (cheap, fast) and not jump straight to MCP for a plain definition lookup. Acceptable to fall through to MCP if tags miss; not acceptable to skip tags entirely.",
+      "files": [],
+      "assertions": []
+    },
+    {
+      "id": 2,
+      "name": "implementers-mcp-required",
+      "prompt": "I'm working in /home/fenrir/code/casa (open in IntelliJ). What classes extend WorkflowAuditStrategy? List each one with file:line.",
+      "expected_output": "Should find at least OrderWorkflowAuditStrategy and OrderReturnWorkflowAuditStrategy (both in we-business-order-audit). Implementer/subclass queries are semantic — gtags can't answer them properly. Skill should drive Claude to use mcp__idea__search_symbol + mcp__idea__get_symbol_info, NOT just rg for 'extends WorkflowAuditStrategy'.",
+      "files": [],
+      "assertions": []
+    },
+    {
+      "id": 3,
+      "name": "callers-prefer-mcp",
+      "prompt": "I'm in /home/fenrir/code/casa (open in IntelliJ). Who calls OrderCommonRuleService — show me every place its methods (execute, supports) are invoked. file:line for each.",
+      "expected_output": "OrderCommonRuleService is the parent class of OrderRuleService. Should resolve callers semantically (subclass invocations, @Component lookups, RuleService consumers). Skill should drive Claude to mcp__idea__get_symbol_info on the class — NOT just rg for 'OrderCommonRuleService' which would miss real call sites and include @Component name string matches.",
+      "files": [],
+      "assertions": []
+    },
+    {
+      "id": 4,
+      "name": "spring-bean-name-text-search",
+      "prompt": "I'm in /home/fenrir/code/casa (open in IntelliJ). Where is the Spring bean named 'OrderWorkflowAuditStrategy' (the @Bean method or @Component) registered, and where is it injected/looked-up by name? Show me file:line for each.",
+      "expected_output": "Should find @Bean orderWorkflowAuditStrategy() in OrderAuditAutoConfiguration.java:13 and any @Qualifier/@Resource/getBean calls referencing the name. Bean-name lookups are textual (string-keyed wiring) — gtags's -rx will miss them; rg works but MCP's index-backed search_in_files_by_text is faster on a 188-module repo. Skill should pick MCP search_in_files_by_text over rg.",
+      "files": [],
+      "assertions": []
+    }
+  ]
+}

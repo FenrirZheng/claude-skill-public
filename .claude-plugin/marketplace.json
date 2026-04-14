@@ -14,6 +14,27 @@
       "description": "Symbol lookup via GNU Global (gtags); fallback to ctags or rg",
       "category": "productivity",
       "tags": ["symbols", "navigation", "gtags", "ctags"]
+    },
+    {
+      "name": "open-in-zed",
+      "source": "./plugins/open-in-zed",
+      "description": "Slash command to open all files touched in the current session in Zed",
+      "category": "productivity",
+      "tags": ["zed", "editor", "session", "workflow"]
+    },
+    {
+      "name": "open-in-intellij",
+      "source": "./plugins/open-in-intellij",
+      "description": "Slash command to open all files touched in the current session in IntelliJ IDEA via the IntelliJ MCP server",
+      "category": "productivity",
+      "tags": ["intellij", "idea", "jetbrains", "editor", "mcp", "session", "workflow"]
+    },
+    {
+      "name": "intellij-code-reference",
+      "source": "./plugins/intellij-code-reference",
+      "description": "Semantic code investigation via IntelliJ MCP (PSI/index-aware) — layered with tags-symbol-lookup and rg",
+      "category": "productivity",
+      "tags": ["intellij", "idea", "jetbrains", "mcp", "psi", "symbols", "navigation", "references"]
     }
   ]
 }

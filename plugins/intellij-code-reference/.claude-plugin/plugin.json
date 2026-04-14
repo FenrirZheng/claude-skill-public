@@ -1,0 +1,12 @@
+{
+  "name": "intellij-code-reference",
+  "version": "0.1.0",
+  "description": "Semantic code investigation via IntelliJ MCP (PSI/index-aware) — layered with tags-symbol-lookup and rg",
+  "author": {
+    "name": "FenrirZheng",
+    "email": "fenrir.zheng@al88tw.com"
+  },
+  "repository": "https://github.com/FenrirZheng/fenrir-claude-public-skills",
+  "license": "MIT",
+  "keywords": ["intellij", "idea", "jetbrains", "mcp", "psi", "symbols", "navigation", "references"]
+}
